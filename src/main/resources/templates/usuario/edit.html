@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:replace="fragments/head :: head"></div>
+<body class="container-fluid">
+	<div th:replace="fragments/navbar :: navbar">...</div>
+	<form action="#" th:object="${usuario}" th:action="@{/user/edit}" method="POST">
+		<div class="form-group">
+			<label for="nome">ID:</label>
+			<input disabled="disabled" type="text" th:value="${usuario.id}" class="form-control"></input>
+		</div>
+		<div class="form-group">
+			<label for="nome">Nome:</label>
+			<input type="text" th:field="*{nome}" th:value="${usuario.nome}" class="form-control"></input>
+		</div>
+		<div class="form-group">
+			<label for="email">Email:</label>
+			<input id="email" type="text" th:field="*{email}" th:value="${usuario.email}" class="form-control"></input>
+		</div>
+		<div class="form-group">
+			<label for="senha">Senha:</label>
+			<input id="senha" type="password" th:field="*{senha}" th:value="${usuario.senha}" class="form-control"></input>
+		</div>
+		<div class="form-group">
+			<input type="submit" value="Alterar usuario" class="btn btn-primary"></input>
+		</div>
+	</form>
+</body>
+</html>

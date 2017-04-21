@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:replace="fragments/head :: head"></div>
+<body class="container-fluid">
+	<div th:replace="fragments/navbar :: navbar">...</div>
+	<form action="#" th:object="${usuario}" th:action="@{/user/new}" method="POST">
+		<div class="form-group">
+			<label for="nome">Nome:</label>
+			<input type="text" th:field="*{nome}" class="form-control"></input>
+		</div>
+		<div class="form-group">
+			<label for="email">Email:</label>
+			<input id="email" type="text" th:field="*{email}" class="form-control"></input>
+		</div>
+		<div class="form-group">
+			<label for="senha">Senha:</label>
+			<input id="senha" type="password" th:field="*{senha}" class="form-control"></input>
+		</div>
+		<div class="form-group">
+			<input type="submit" value="Cadastrar usuário" class="btn btn-primary"></input>
+		</div>
+	</form>
+</body>
+</html>
